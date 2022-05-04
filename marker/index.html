@@ -3,32 +3,28 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <title> MarkerBased AR.js Marker Demo</title>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
-      <a-marker circle type='pattern' url='patt/sphere.patt'>
+      <a-marker circle type='pattern' url='patt/pattern-sphere.patt'>
             <a-sphere 
             position="0 0 0" 
             radius="1.25" 
             rotation="10 43 45"
             color="#FF69B4"
             ></a-sphere>
-      </a-marker>
-      <a-marker box type='pattern' url='patt/box.patt'>
+      <a-marker box type='pattern' url='patt/pattern-box.patt'>
         <a-box 
          position="0 0 0" 
          rotation="0 45 0" 
          color="#48BF53"
          ></a-box>
-      </a-marker>
-      <a-marker cyl type='pattern' url='patt/cylinder.patt'>
+      <a-marker cyl type='pattern' url='patt/pattern-cylinder.patt'>
         <a-cylinder
         position="0 0 0"
         radius="0.5" 
         height="1.5"
         color="#039f9b"
         ></a-cylinder>
-      </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
   </body>
