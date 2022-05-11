@@ -29,7 +29,7 @@
             init: function () {
                 var marker = this.el;
 
-                this.vid = document.querySelector("#nissan");
+                this.vid = document.querySelector("#trexrawr");
 
                 marker.addEventListener('markerFound', function () {
                     this.vid.play();
@@ -71,13 +71,13 @@
       smoothThreshold="5"
     >
       <!-- as a child of the a-nft entity, you can define the content to show. here's a video entity -->
-      <a-video 
-       src="#nissan" 
+      <a-entity 
+       src="#trexrawr" 
 	rotation='90 0 180' 
 	width='640' 
 	height='480' 
 	 >
-	</a-video>
+	</a-entity>
     </a-nft>
     <!-- static camera that moves according to the device movemenents -->
     <a-entity camera></a-entity>
