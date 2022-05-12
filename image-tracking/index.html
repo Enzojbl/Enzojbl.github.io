@@ -1,6 +1,7 @@
 <!-- import aframe and then ar.js with image tracking / location based features -->
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<title> Image Tracking Demo </title>
 
 <!-- style for the loader -->
 <style>
@@ -22,27 +23,8 @@
     font-size: 1.25em;
     color: white;
   }
+	
 </style>
-<script>
-    window.onload = function() {
-        AFRAME.registerComponent('videohandler', {
-            init: function () {
-                var marker = this.el;
-
-                this.vid = document.querySelector("#trexrawr");
-
-                marker.addEventListener('markerFound', function () {
-                    this.vid.play();
-                }.bind(this));
-
-		marker.addEventListener('markerLost', function() {
-			this.vid.pause();
-			this.vid.currentTime = 0;
-		}.bind(this));
-            }
-        });
-    };
-</script>
 <body style="margin : 0px; overflow: hidden;">
   <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
   <div class="arjs-loader">
@@ -56,9 +38,7 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-    <a-assets>
-        <video id="trexrawr" autoplay loop="true" crossorigin type="video/mp4" preload="auto" src="/image-tracking/trexrawr.mp4"></video>
-    </a-assets>
+    
     <!-- a-nft is the anchor that defines an Image Tracking entity -->
     <!-- on 'url' use the path to the Image Descriptors created before. -->
     <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
@@ -71,11 +51,10 @@
       smoothThreshold="5"
     >
       <!-- as a child of the a-nft entity, you can define the content to show. here's a video entity -->
-      <a-entity 
-       src="#trexrawr" 
-	rotation='90 0 180' 
-	width='640' 
-	height='480' 
+      <a-entity
+      gltf-model="./trex.gltf"
+      scale="5 5 5"
+      position="8 2 1" 
 	 >
 	</a-entity>
     </a-nft>
