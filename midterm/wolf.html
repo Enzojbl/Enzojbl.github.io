@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>User Interaction Demo</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script>
+    window.onload = function() {
+        AFRAME.registerComponent('event-listener', {
+            init: function () {
+                this.audio = document.querySelector("#roar");
+
+                this.el.addEventListener('click', function (e) {
+		
+                    let dragon = document.querySelector('#dragon-model')
+		    dragon.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    this.audio.play();
+			
+                  console.log(e)
+                }.bind(this));
+		
+                this.el.addEventListener('mouseenter', function (e) {
+                    console.log(e)
+                }.bind(this));
+		    
+		 this.el.addEventListener('mouseleave', function (e) {
+			 console.log(e)
+                }.bind(this));
+		 
+		
+                this.el.addEventListener('touchmove', function (e) {
+                    //this.audio.play();
+			
+                  console.log(e)
+                }.bind(this));
+                this.el.addEventListener('touchstart', function (e) {
+		
+                    let dragon = document.querySelector('#dragon-model')
+		    dragon.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    this.audio.play();
+			console.log(e)
+                }.bind(this));
+		    
+		 this.el.addEventListener('touchend', function (e) {
+			 console.log(e)
+                }.bind(this));
+		    
+		
+                this.el.addEventListener('animation-finished', function (e) {
+			 console.log(e)
+                    let dragon = document.querySelector('#dragon-model')
+		    dragon.removeAttribute('animation-mixer');
+                }.bind(this));
+		
+            }
+        });
+    };
+</script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene renderer="colorManagement: true">
+       <a-assets>
+        <a-asset-item id="dragon" response-type="arraybuffer" src="./dragon.glb"></a-asset-item>
+        <audio id="roar" src="./assets/roar.wav"></audio>
+      </a-assets>
+      <a-entity event-listener id="dragon-model"  
+        gltf-model="#dragon" 
+        scale=".5 .5 .5" 
+        position = "0 0 -5" 
+        rotation="0 0 0" 
+      >
+      </a-entity>
+      <a-sound src="#roar" autoplay="false"></a-sound>
+      <a-entity cursor="rayOrigin:mouse"></a-entity>
+      <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
+    </a-scene>
+  </body>
+</html>
