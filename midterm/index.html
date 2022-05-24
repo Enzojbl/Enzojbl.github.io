@@ -14,7 +14,7 @@
                 this.el.addEventListener('click', function (e) {
 		
                     let wolf = document.querySelector('#wolf-model')
-		    wolf.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+		    wolf.setAttribute('animation-mixer', "clip: Scene; loop: twice;");
                     this.audio.play();
 			
                   console.log(e)
@@ -68,7 +68,7 @@
       <a-entity event-listener id="wolf-model"  
         gltf-model="#wolf" 
         scale=".5 .5 .5" 
-        position = "0 0 1" 
+        position = "0 0 -5" 
         rotation="0 0 0" 
       >
       </a-entity>
