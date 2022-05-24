@@ -14,7 +14,7 @@
                 this.el.addEventListener('click', function (e) 
 		{
                     let wolf = document.querySelector('#wolf-model')
-		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 4");
+		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 1.5");
                     this.audio.play();
 			
                   console.log(e)
@@ -37,7 +37,7 @@
                 this.el.addEventListener('touchstart', function (e) {
 		
                     let wolf = document.querySelector('#wolf-model')
-		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 4");
+		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 1.5");
                     this.audio.play();
 			
 			console.log(e)
