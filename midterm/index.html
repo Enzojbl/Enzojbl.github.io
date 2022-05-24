@@ -62,7 +62,7 @@
   <body style="margin: 0; overflow: hidden;">
     <a-scene renderer="colorManagement: true">
        <a-assets>
-        <a-asset-item id="wolf" src="./assets/wolf.gltf"></a-asset-item>
+        <a-asset-item id="wolf" response-type="arraybuffer" src="./wolf.glb"></a-asset-item>
         <audio id="howl" src="./assets/howl.wav"></audio>
       </a-assets>
       <a-entity event-listener id="wolf-model"  
