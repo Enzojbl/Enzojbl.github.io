@@ -22,13 +22,15 @@
 		
            	if(wolf.getAttribute("animation-mixer").clip === "01_Run")
 		{
-                cuphead.setAttribute("animation-mixer", "clip: Static Pose") 
-		this.audio.play();
+                wolf.setAttribute("animation-mixer", "clip: Static Pose") 
+		this.audio.pause()
+                this.audio.currentTime = 0
 		}
 		else{
-			cuphead.setAttribute("animation-mixer", "clip: "01_Run;
+			wolf.setAttribute("animation-mixer", "clip: "01_Run;
 					     loop: repeat;")
-			this.audio.play();
+			this.audio.play()
+                      	this.audio.loop = true
 		}
                   console.log(e)
                 bind(this));
@@ -55,17 +57,18 @@
 			
 		if(wolf.getAttribute("animation-mixer").clip === "01_Run")
 		{
-                cuphead.setAttribute("animation-mixer", "clip: Static Pose") 
-		this.audio.play();
+                wolf.setAttribute("animation-mixer", "clip: Static Pose") 
+		this.audio.pause()
+                this.audio.currentTime = 0
 		}
 		else{
-			cuphead.setAttribute("animation-mixer", "clip: "01_Run;
+			wolf.setAttribute("animation-mixer", "clip: "01_Run;
 					     loop: repeat;")
-			this.audio.play();
+			this.audio.play()
+                   	this.audio.loop = true
 			{
-                
 			console.log(e)
-                }.bind(this));
+                }.bind(this))
 		    
 		 this.el.addEventListener('touchend', function (e) {
 			 console.log(e)
