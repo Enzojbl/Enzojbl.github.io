@@ -37,7 +37,7 @@
                 this.el.addEventListener('touchstart', function (e) {
 		
                     let wolf = document.querySelector('#wolf-model')
-		    wolf.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+		    wolf.setAttribute('animation-mixer', "clip: Scene; loop: twice;");
                     this.audio.play();
 			console.log(e)
                 }.bind(this));
