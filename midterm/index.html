@@ -6,81 +6,57 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script>
-    window.onload = function() {
+     window.onload = function() {
         AFRAME.registerComponent('event-listener', {
             init: function () {
-                this.audio = document.querySelector("#howl")
-		    
-		let wolf = document.querySelector('#wolf-model')
-		wolf = wolf.setAttribute('animation-mixer', "clip: Static Pose")
-		
-                this.el.addEventListener('click', function (e) {
-			
-		let wolf = document.querySelector('#wolf-model')
-		console.log(wolf.getAttribute("animation-mixer").clip)
-		
-		
-           	if(wolf.getAttribute("animation-mixer").clip === "01_Run")
+                this.audio = document.querySelector("#howl");
+
+                this.el.addEventListener('click', function (e) 
 		{
-                wolf.setAttribute("animation-mixer", "clip: Static Pose") 
-		this.audio.pause()
-                this.audio.currentTime = 0
-		}
-		else{
-			wolf.setAttribute("animation-mixer", "clip: "01_Run; loop: repeat; timeScale: 4")
-			this.audio.play()
-                      	this.audio.loop = true
-		}
+                    let wolf = document.querySelector('#wolf-model')
+		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 4");
+                    this.audio.play();
+			
                   console.log(e)
-                bind(this))
+                }.bind(this));
 		
                 this.el.addEventListener('mouseenter', function (e) {
                     console.log(e)
-                }.bind(this))
+                }.bind(this));
 		    
 		 this.el.addEventListener('mouseleave', function (e) {
 			 console.log(e)
-                }.bind(this))
+                }.bind(this));
 		 
 		
                 this.el.addEventListener('touchmove', function (e) {
-                    
+                    //this.audio.play();
 			
                   console.log(e)
-                }.bind(this))
-			
+                }.bind(this));
                 this.el.addEventListener('touchstart', function (e) {
 		
                     let wolf = document.querySelector('#wolf-model')
-		   console.log(wolf.getAttribute("animation-mixer").clip)
+		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 4");
+                    this.audio.play();
 			
-		if(wolf.getAttribute("animation-mixer").clip === "01_Run")
-		{
-                wolf.setAttribute("animation-mixer", "clip: Static Pose") 
-		this.audio.pause()
-                this.audio.currentTime = 0
-		}
-		else{
-			wolf.setAttribute("animation-mixer", "clip: "01_Run; loop: repeat; timeScale: 4")
-			this.audio.play()
-                   	this.audio.loop = true
-			{
 			console.log(e)
-                }.bind(this))
+                }.bind(this));
 		    
 		 this.el.addEventListener('touchend', function (e) {
 			 console.log(e)
-                }.bind(this))
+                }.bind(this));
 		    
 		
                 this.el.addEventListener('animation-finished', function (e) {
 			 console.log(e)
-                    let wolf = document.querySelector("wolf-model")
-		    wolf.removeAttribute('animation-mixer')
-                }.bind(this)),
+                    let wolf = document.querySelector('#wolf-model')
+		    wolf.removeAttribute('animation-mixer');
+                }.bind(this));
+		
             }
-        })
-    }
+        });
+    };
 </script>
   </head>
 
