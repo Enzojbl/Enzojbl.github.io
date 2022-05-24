@@ -26,8 +26,8 @@
 		this.audio.play();
 		}
 		else{
-			cuphead.setAttribute("animation-mixer", "clip: "01_Run";
-					     loop: repeat;)
+			cuphead.setAttribute("animation-mixer", "clip: "01_Run;
+					     loop: repeat;")
 			this.audio.play();
 		}
                   console.log(e)
@@ -59,8 +59,8 @@
 		this.audio.play();
 		}
 		else{
-			cuphead.setAttribute("animation-mixer", "clip: "01_Run";
-					     loop: repeat;)
+			cuphead.setAttribute("animation-mixer", "clip: "01_Run;
+					     loop: repeat;")
 			this.audio.play();
 			{
                 
@@ -92,7 +92,8 @@
 	response-type="arraybuffer" 
 	src="./wolf.glb"
 	></a-asset-item>
-        <audio id="howl" src="./assets/howl.wav"></audio>
+        <audio id="howl" 
+	src="./assets/howl.wav"></audio>
       </a-assets>
       <a-entity 
 	event-listener 
@@ -100,8 +101,7 @@
         gltf-model="#wolf" 
         scale="1.5 1.5 1.5" 
         position = "0 0 -5" 
-        rotation="0 0 0" 
-	animation-mixer="clip:Scene"
+        rotation="0 0 0"
       >
       </a-entity>
       <a-sound src="#howl" autoplay="false"></a-sound>
