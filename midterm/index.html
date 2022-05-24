@@ -14,7 +14,7 @@
                 this.el.addEventListener('click', function (e) {
 		
                     let wolf = document.querySelector('#wolf-model')
-		    wolf.setAttribute('animation-mixer', "clip: Scene; loop: twice;");
+		    wolf.setAttribute('animation-mixer', "clip: Scene; loop: thrice;");
                     this.audio.play();
 			
                   console.log(e)
@@ -37,7 +37,7 @@
                 this.el.addEventListener('touchstart', function (e) {
 		
                     let wolf = document.querySelector('#wolf-model')
-		    wolf.setAttribute('animation-mixer', "clip: Scene; loop: twice;");
+		    wolf.setAttribute('animation-mixer', "clip: Scene; loop: thrice;");
                     this.audio.play();
 			console.log(e)
                 }.bind(this));
@@ -68,7 +68,7 @@
       <a-entity event-listener id="wolf-model"  
         gltf-model="#wolf" 
         scale=".5 .5 .5" 
-        position = "0 0 -5" 
+        position = "-5 5 1" 
         rotation="0 0 0" 
       >
       </a-entity>
