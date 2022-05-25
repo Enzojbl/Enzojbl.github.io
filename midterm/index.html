@@ -5,71 +5,35 @@
     <title>UI AR Demo</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-    <script>
-     window.onload = function() {
-        AFRAME.registerComponent('event-listener', {
-            init: function () {
-                this.audio = document.querySelector("#howl");
-
-                this.el.addEventListener('click', function (e) 
-		{
-                    let wolf = document.querySelector('#wolf-model')
-		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 0.5");
-                    this.audio.play();
-			
-                  console.log(e)
-                }.bind(this));
-		
-                this.el.addEventListener('mouseenter', function (e) {
-                    console.log(e)
-                }.bind(this));
-		    
-		 this.el.addEventListener('mouseleave', function (e) {
-			 console.log(e)
-                }.bind(this));
-		 
-		
-                this.el.addEventListener('touchmove', function (e) {
-                    //this.audio.play();
-			
-                  console.log(e)
-                }.bind(this));
-                this.el.addEventListener('touchstart', function (e) {
-		
-                    let wolf = document.querySelector('#wolf-model')
-		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 0.5");
-                    this.audio.play();
-			
-			console.log(e)
-                }.bind(this));
-		    
-		 this.el.addEventListener('touchend', function (e) {
-			 console.log(e)
-                }.bind(this));
-		    
-		
-                this.el.addEventListener('animation-finished', function (e) {
-			 console.log(e)
-                    let wolf = document.querySelector('#wolf-model')
-		    wolf.removeAttribute('animation-mixer');
-                }.bind(this));
-		
-            }
-        });
-    };
-</script>
+    <script> src ="./uicode.js"></script>
   </head>
 
   <body style="margin: 0; overflow: hidden;">
     <a-scene renderer="colorManagement: true">
        <a-assets>
         <a-asset-item 
-	id="wolf" 
-	response-type="arraybuffer" 
-	src="./wolf.glb"
+		id="wolf" 
+		response-type="arraybuffer" 
+		src="./wolf.glb"
 	></a-asset-item>
-        <audio id="howl" 
-	src="./assets/howl.wav"></audio>
+	<a-asset-item 
+		id="hellwolf" 
+		response-type="arraybuffer" 
+		src="./hellwolf.glb"
+	></a-asset-item>
+	<a-asset-item 
+		id="deer" 
+		response-type="arraybuffer" 
+		src="./deer.glb"
+	></a-asset-item>
+        	<audio id="howl" 
+		src="./assets/howl.wav"></audio>
+		<audio id="howling" 
+		src="./assets/howling.mp3"></audio>
+	       <audio id="sdeer" 
+		src="./assets/sdeer.mp3"></audio>
+	       <audio id="escape" 
+		src="./assets/escape.mp3"></audio>
       </a-assets>
       <a-entity 
 	event-listener 
@@ -78,9 +42,27 @@
         scale="1.5 1.5 1.5" 
         position = "0 0 -5" 
         rotation="0 0 0"
-      >
-      </a-entity>
+      ></a-entity>
+	 <a-entity 
+	event-listener 
+	id="hellwolf-model"  
+        gltf-model="#hellwolf" 
+        scale="1.5 1.5 1.5" 
+        position = "2 0 -5" 
+        rotation="0 0 0"
+      ></a-entity>
+	     <a-entity 
+	event-listener 
+	id="deer-model"  
+        gltf-model="#deer" 
+        scale="1.5 1.5 1.5" 
+        position = "1.5 2 -5" 
+        rotation="0 0 0"
+      ></a-entity>
+      <a-sound src="#escape" autoplay="true" loop="true" volume="0.25"></a-sound>
       <a-sound src="#howl" autoplay="false"></a-sound>
+      <a-sound src="#howling" autoplay="false"></a-sound>
+      <a-sound src="#sdeer" autoplay="false"></a-sound>
       <a-entity cursor="rayOrigin:mouse"></a-entity>
       <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
     </a-scene>
