@@ -28,9 +28,10 @@ window.onload = function() {
 			
                   console.log(e)
                 }.bind(this));
-                this.el.addEventListener('touchstart', function (e) {
-			
-			console.log(e)
+		    
+                this.el.addEventListener('touchstart', function (e) 
+		{
+		  console.log(e)
                 }.bind(this));
 		    
 		 this.el.addEventListener('touchend', function (e) {
@@ -52,11 +53,12 @@ window.onload = function() {
         AFRAME.registerComponent('hellwolf-event', {
             init: function () {
                 this.audio = document.querySelector("#howling");
-
+		let hellwolf = document.querySelector('#hellwolf-model')
+		hellwolf.setAttribute('animation-mixer', "clip: Take 001; loop: repeat; timeScale: 0.1");
                 this.el.addEventListener('click', function (e) 
 		{
                     let hellwolf = document.querySelector('#hellwolf-model')
-		    hellwolf.setAttribute('animation-mixer', "clip: Take 001; loop: repeat; timeScale: 0.5");
+		    hellwolf.setAttribute('animation-mixer', "clip: Take 001; loop: repeat; timeScale: 0.1");
                     this.audio.play();
 			
                   console.log(e)
@@ -77,10 +79,6 @@ window.onload = function() {
                   console.log(e)
                 }.bind(this));
                 this.el.addEventListener('touchstart', function (e) {
-		
-                   let hellwolf = document.querySelector('#hellwolf-model')
-		    hellwolf.setAttribute('animation-mixer', "clip: Take 001; loop: repeat; timeScale: 0.5");
-                    this.audio.play();
 			
 			console.log(e)
                 }.bind(this));
@@ -104,7 +102,8 @@ window.onload = function() {
         AFRAME.registerComponent('deer-event', {
             init: function () {
                 this.audio = document.querySelector("#sdeer");
-
+		let deer = document.querySelector('#deer-model')
+		deer.setAttribute('animation-mixer', "clip: idlewalkjumpeat_cyclescomplate; loop: once;");
                 this.el.addEventListener('click', function (e) 
 		{
                     let deer = document.querySelector('#deer-model')
