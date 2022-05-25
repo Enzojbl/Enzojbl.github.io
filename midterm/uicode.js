@@ -1,5 +1,5 @@
 window.onload = function() {
-        AFRAME.registerComponent('event-listener', {
+        AFRAME.registerComponent('wolf-event', {
             init: function () {
                 this.audio = document.querySelector("#howl");
 		  let wolf = document.querySelector('#wolf-model')
@@ -49,7 +49,7 @@ window.onload = function() {
     };
 
 window.onload = function() {
-        AFRAME.registerComponent('event-listener', {
+        AFRAME.registerComponent('hellwolf-event', {
             init: function () {
                 this.audio = document.querySelector("#howling");
 
@@ -101,7 +101,7 @@ window.onload = function() {
     };
 
 window.onload = function() {
-        AFRAME.registerComponent('event-listener', {
+        AFRAME.registerComponent('deer-event', {
             init: function () {
                 this.audio = document.querySelector("#sdeer");
 
