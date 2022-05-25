@@ -31,6 +31,9 @@ window.onload = function() {
 		    
                 this.el.addEventListener('touchstart', function (e) 
 		{
+			let wolf = document.querySelector('#wolf-model')
+		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 0.5");
+                    this.audio.play();
 		  console.log(e)
                 }.bind(this));
 		    
@@ -79,6 +82,9 @@ window.onload = function() {
                   console.log(e)
                 }.bind(this));
                 this.el.addEventListener('touchstart', function (e) {
+			let hellwolf = document.querySelector('#hellwolf-model')
+		    deer.setAttribute('animation-mixer', "clip: Take 001; loop: repeat; timeScale: 0.1");
+                    this.audio.play();
 			
 			console.log(e)
                 }.bind(this));
