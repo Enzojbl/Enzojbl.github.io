@@ -110,7 +110,7 @@ window.onload = function() {
                 this.el.addEventListener('click', function (e) 
 		{
                     let deer = document.querySelector('#deer-model')
-		    deer.setAttribute('animation-mixer', "clip: idlewalkjumpeat_cyclescomplate; loop: repeat; timeScale: 1");
+		    deer.setAttribute('animation-mixer', "clip: idlewalkjumpeat_cyclescomplate; loop: once;");
                     this.audio.play();
 			
                   console.log(e)
@@ -133,7 +133,7 @@ window.onload = function() {
                 this.el.addEventListener('touchstart', function (e) {
 		
                     let deer = document.querySelector('#deer-model')
-		    deer.setAttribute('animation-mixer', "clip: idlewalkjumpeat_cyclescomplate; loop: repeat; timeScale: 1");
+		    deer.setAttribute('animation-mixer', "clip: idlewalkjumpeat_cyclescomplate; loop: once;");
                     this.audio.play();
 			
 			console.log(e)
