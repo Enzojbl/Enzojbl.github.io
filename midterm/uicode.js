@@ -3,7 +3,7 @@ window.onload = function() {
             init: function () {
                 this.audio = document.querySelector("#howl");
 		  let wolf = document.querySelector('#wolf-model')
-		    wolf.setAttribute('animation-mixer', "clip: Static Pose;");
+		    wolf.setAttribute('animation-mixer', "clip: 01_Run; loop: repeat; timeScale: 0.5;");
                 
 			 this.el.addEventListener('click', function (e) 
 		{
