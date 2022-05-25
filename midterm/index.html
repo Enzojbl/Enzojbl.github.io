@@ -5,7 +5,7 @@
     <title>UI AR Demo</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-    <script> src ="./uicode.js"</script>
+    <script src ="./uicode.js"></script>
   </head>
 
   <body style="margin: 0; overflow: hidden;">
@@ -47,8 +47,8 @@
 	event-listener 
 	id="hellwolf-model"  
         gltf-model="#hellwolf" 
-        scale="1.5 1.5 1.5" 
-        position = "0 0 0" 
+        scale="0.1 0.1 0.1" 
+        position = "2 0 -5" 
         rotation="0 0 0"
       ></a-entity>
 	     <a-entity 
@@ -56,7 +56,7 @@
 	id="deer-model"  
         gltf-model="#deer" 
         scale="1 1 1" 
-        position = "0 0 0" 
+        position = "0 -5 -5" 
         rotation="0 0 0"
       ></a-entity>
       <a-sound src="#escape" autoplay="true" loop="true" volume="0.25"></a-sound>
